@@ -10,7 +10,7 @@ export default (url) => {
     setTimeout(() => {
       (async () => {
         try {
-          const { data } = await api.get(url);
+          const { data } = await api(url);
           setData(data);
         } catch (err) {
           err.response
