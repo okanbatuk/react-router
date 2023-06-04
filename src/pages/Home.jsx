@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Feed from "../components/Feed";
 
-const Home = ({ posts }) => {
+const Home = ({ loading, error, posts }) => {
   return (
     <main className="Home">
-      {posts.length ? (
-        <Feed posts={posts} />
-      ) : (
+      {error ? (
         <p
           style={{
             display: "flex",
@@ -15,8 +13,21 @@ const Home = ({ posts }) => {
             fontSize: "1.2rem",
           }}
         >
-          There is no posts to display
+          Error: {error}
         </p>
+      ) : loading ? (
+        <p
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            fontStyle: "italic",
+            fontSize: "1.2rem",
+          }}
+        >
+          Loading..
+        </p>
+      ) : (
+        <Feed posts={posts} />
       )}
     </main>
   );
