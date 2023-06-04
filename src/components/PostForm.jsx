@@ -9,20 +9,20 @@ const PostForm = ({
   postBody,
   setPostBody,
   navigate,
+  api,
 }) => {
-  const addPost = (title, body) => {
-    const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
-    const postList = [
-      ...posts,
-      {
-        id,
-        title,
-        body,
-        datetime: format(new Date(), "MMMM dd, yyyy pp"),
-      },
-    ];
+  const addPost = async (title, body) => {
+    try {
+      const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
+      const datetime = format(new Date(), "MMMM dd, yyyy pp");
+      const newPost = { id, title, body, datetime };
 
-    setPosts(postList);
+      const response = await api.post("/posts", newPost);
+      const postList = [...posts, response.data];
+      setPosts(postList);
+    } catch (err) {
+      console.log(`Error: ${err.message}`);
+    }
   };
 
   const handleSubmit = (e) => {

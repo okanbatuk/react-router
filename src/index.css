@@ -210,13 +210,26 @@ body {
   margin-bottom: 1rem;
 }
 
-.PostPage button {
-  height: 48px;
+.PostPage .deleteBtn {
+  margin-left: 10px;
+  height: 42px;
   min-width: 48px;
   border-radius: 0.25rem;
-  padding: 0.5rem;
-  font-size: 1rem;
+  padding: 0.4rem;
+  font-size: 0.75rem;
   background-color: red;
+  color: #fff;
+  cursor: pointer;
+}
+
+.PostPage .updateBtn {
+  margin-right: 10px;
+  height: 42px;
+  min-width: 48px;
+  border-radius: 0.25rem;
+  padding: 0.4rem;
+  font-size: 0.75rem;
+  background-color: rgb(15, 135, 216);
   color: #fff;
   cursor: pointer;
 }

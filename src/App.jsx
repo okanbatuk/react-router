@@ -9,6 +9,7 @@ import PostPage from "./pages/PostPage";
 import About from "./pages/About";
 import Missing from "./pages/Missing";
 import useFetch from "./hooks/useFetch";
+import api from "./api/posts";
 
 const App = () => {
   const { data, loading, error } = useFetch("/posts");
@@ -50,6 +51,7 @@ const App = () => {
           element={
             <NewPost
               navigate={navigate}
+              api={api}
               posts={posts}
               setPosts={setPosts}
               postTitle={postTitle}
@@ -62,7 +64,12 @@ const App = () => {
         <Route
           path="/post/:id"
           element={
-            <PostPage posts={posts} setPosts={setPosts} navigate={navigate} />
+            <PostPage
+              posts={posts}
+              setPosts={setPosts}
+              navigate={navigate}
+              api={api}
+            />
           }
         />
         <Route path="/about" element={<About />} />
