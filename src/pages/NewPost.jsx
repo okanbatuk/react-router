@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Form from "../components/PostForm";
 
-const NewPost = ({
-  posts,
-  setPosts,
-  postTitle,
-  setPostTitle,
-  postBody,
-  setPostBody,
-  navigate,
-  api,
-}) => {
+const NewPost = ({ posts, setPosts, navigate, api }) => {
   return (
     <main className="PostPage">
       <h1>New Post</h1>
@@ -19,10 +10,6 @@ const NewPost = ({
         api={api}
         posts={posts}
         setPosts={setPosts}
-        postTitle={postTitle}
-        setPostTitle={setPostTitle}
-        postBody={postBody}
-        setPostBody={setPostBody}
       />
     </main>
   );

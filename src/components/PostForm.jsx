@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { format } from "date-fns";
 
-const PostForm = ({
-  posts,
-  setPosts,
-  postTitle,
-  setPostTitle,
-  postBody,
-  setPostBody,
-  navigate,
-  api,
-}) => {
+const PostForm = ({ posts, setPosts, navigate, api }) => {
+  const [postTitle, setPostTitle] = useState("");
+  const [postBody, setPostBody] = useState("");
+
   const addPost = async (title, body) => {
     try {
       const id = posts.length ? posts[posts.length - 1].id + 1 : 1;

@@ -182,7 +182,7 @@ body {
   font-family: "Open Sans", sans-serif;
   width: 100%;
   min-height: 48px;
-  font-size: 1rem;
+  font-size: 0.75rem;
   padding: 0.25rem;
   border-radius: 0.25rem;
   margin-right: 0.25rem;
@@ -195,11 +195,12 @@ body {
 
 .newPostForm button {
   margin-top: 1rem;
-  height: 48px;
+  height: 42px;
   min-width: 48px;
   border-radius: 10px;
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.75rem;
+  color: #000;
   cursor: pointer;
 }
 
@@ -210,28 +211,25 @@ body {
   margin-bottom: 1rem;
 }
 
-.PostPage .deleteBtn {
-  margin-left: 10px;
+.PostPage button {
   height: 42px;
   min-width: 48px;
   border-radius: 0.25rem;
   padding: 0.4rem;
   font-size: 0.75rem;
-  background-color: red;
-  color: #fff;
   cursor: pointer;
 }
 
-.PostPage .updateBtn {
-  margin-right: 10px;
-  height: 42px;
-  min-width: 48px;
-  border-radius: 0.25rem;
-  padding: 0.4rem;
-  font-size: 0.75rem;
-  background-color: rgb(15, 135, 216);
+.PostPage .deleteBtn {
   color: #fff;
-  cursor: pointer;
+  margin-left: 0.25rem;
+  background-color: red;
+}
+
+.PostPage .editBtn {
+  color: #fff;
+  margin-right: 0.25rem;
+  background-color: rgb(15, 135, 216);
 }
 
 .statusMsg {

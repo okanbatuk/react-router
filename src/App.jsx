@@ -10,12 +10,11 @@ import About from "./pages/About";
 import Missing from "./pages/Missing";
 import useFetch from "./hooks/useFetch";
 import api from "./api/posts";
+import EditPost from "./pages/EditPost";
 
 const App = () => {
   const { data, loading, error } = useFetch("/posts");
   const [posts, setPosts] = useState([]);
-  const [postTitle, setPostTitle] = useState("");
-  const [postBody, setPostBody] = useState("");
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState("");
   const navigate = useNavigate();
@@ -54,10 +53,17 @@ const App = () => {
               api={api}
               posts={posts}
               setPosts={setPosts}
-              postTitle={postTitle}
-              setPostTitle={setPostTitle}
-              postBody={postBody}
-              setPostBody={setPostBody}
+            />
+          }
+        />
+        <Route
+          path="/edit/:id"
+          element={
+            <EditPost
+              navigate={navigate}
+              api={api}
+              posts={posts}
+              setPosts={setPosts}
             />
           }
         />
@@ -65,10 +71,10 @@ const App = () => {
           path="/post/:id"
           element={
             <PostPage
-              posts={posts}
-              setPosts={setPosts}
               navigate={navigate}
               api={api}
+              posts={posts}
+              setPosts={setPosts}
             />
           }
         />
