@@ -10,7 +10,7 @@ const Home = ({ loading, error, posts }) => {
             display: "flex",
             justifyContent: "center",
             color: "red",
-            fontSize: "1.2rem",
+            fontSize: "1rem",
           }}
         >
           Error: {error}
@@ -21,7 +21,7 @@ const Home = ({ loading, error, posts }) => {
             display: "flex",
             justifyContent: "center",
             fontStyle: "italic",
-            fontSize: "1.2rem",
+            fontSize: "1rem",
           }}
         >
           Loading..
