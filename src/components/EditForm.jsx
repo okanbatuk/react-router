@@ -20,18 +20,22 @@ export default ({ navigate, api, posts, setPosts }) => {
       setPosts(
         posts.map((post) => (post.id === id ? { ...response.data } : post))
       );
-
-      setEditTitle("");
-      setEditBody("");
-      navigate("/");
     } catch (err) {
       console.log(err.message);
     }
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    editTitle && editBody && editPost(post.id);
+    setEditTitle("");
+    setEditBody("");
+    navigate("/");
+  };
   return (
     <>
       {editTitle && editBody ? (
-        <form className="newPostForm" onSubmit={(e) => e.preventDefault()}>
+        <form className="newPostForm" onSubmit={handleSubmit}>
           <label htmlFor="postTitle">Title:</label>
           <input
             autoFocus
@@ -49,9 +53,7 @@ export default ({ navigate, api, posts, setPosts }) => {
             value={editBody}
             onChange={(e) => setEditBody(e.target.value)}
           />
-          <button type="submit" onClick={() => editPost(post.id)}>
-            Update
-          </button>
+          <button type="submit">Update</button>
         </form>
       ) : (
         <>

@@ -57,7 +57,7 @@ const App = () => {
           }
         />
         <Route
-          path="/edit/:id"
+          path="/post/edit/:id"
           element={
             <EditPost
               navigate={navigate}

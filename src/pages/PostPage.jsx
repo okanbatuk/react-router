@@ -26,7 +26,7 @@ const PostPage = ({ posts, setPosts, navigate, api }) => {
             <button
               className="editBtn"
               onClick={() => {
-                navigate(`/edit/${post.id}`);
+                navigate(`/post/edit/${post.id}`);
               }}
             >
               Update Post

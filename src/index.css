@@ -168,6 +168,33 @@ body {
   margin: 1rem 0;
 }
 
+.Missing h2,
+.PostPage h2,
+.Missing p,
+.PostPage p {
+  margin-bottom: 1rem;
+}
+
+.PostPage button {
+  height: 42px;
+  min-width: 48px;
+  border-radius: 0.25rem;
+  padding: 0.4rem;
+  font-size: 0.75rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.PostPage .deleteBtn {
+  margin-left: 0.25rem;
+  background-color: red;
+}
+
+.PostPage .editBtn {
+  margin-right: 0.25rem;
+  background-color: rgb(15, 135, 216);
+}
+
 .newPostForm {
   display: flex;
   flex-direction: column;
@@ -202,34 +229,6 @@ body {
   font-size: 0.75rem;
   color: #000;
   cursor: pointer;
-}
-
-.Missing h2,
-.PostPage h2,
-.Missing p,
-.PostPage p {
-  margin-bottom: 1rem;
-}
-
-.PostPage button {
-  height: 42px;
-  min-width: 48px;
-  border-radius: 0.25rem;
-  padding: 0.4rem;
-  font-size: 0.75rem;
-  cursor: pointer;
-}
-
-.PostPage .deleteBtn {
-  color: #fff;
-  margin-left: 0.25rem;
-  background-color: red;
-}
-
-.PostPage .editBtn {
-  color: #fff;
-  margin-right: 0.25rem;
-  background-color: rgb(15, 135, 216);
 }
 
 .statusMsg {
