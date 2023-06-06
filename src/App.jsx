@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import api from "./api/posts";
+import useFetch from "./hooks/useFetch";
+import useWindowSize from "./hooks/useWindowSize";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -8,12 +11,11 @@ import NewPost from "./pages/NewPost";
 import PostPage from "./pages/PostPage";
 import About from "./pages/About";
 import Missing from "./pages/Missing";
-import useFetch from "./hooks/useFetch";
-import api from "./api/posts";
 import EditPost from "./pages/EditPost";
 
 const App = () => {
   const { data, loading, error } = useFetch("/posts");
+  const { width } = useWindowSize();
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState("");
@@ -34,7 +36,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header title="React JS Blog" navigate={navigate} />
+      <Header title="React JS Blog" width={width} />
       <Nav search={search} setSearch={setSearch} />
       <Routes>
         <Route
