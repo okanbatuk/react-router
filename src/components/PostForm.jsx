@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { format } from "date-fns";
+import api from "../api/posts";
+import { useNavigate } from "react-router-dom";
+import DataContext from "../context/DataContext";
 
-const PostForm = ({ posts, setPosts, navigate, api }) => {
+const PostForm = () => {
   const [postTitle, setPostTitle] = useState("");
   const [postBody, setPostBody] = useState("");
+  const { posts, setPosts } = useContext(DataContext);
+  const navigate = useNavigate();
 
   const addPost = async (title, body) => {
     try {

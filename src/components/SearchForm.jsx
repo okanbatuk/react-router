@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
+import DataContext from "../context/DataContext";
 
-const SearchForm = ({ search, setSearch }) => {
+const SearchForm = () => {
+  const { search, setSearch } = useContext(DataContext);
   return (
     <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
       <label htmlFor="search">Search Posts</label>

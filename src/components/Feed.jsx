@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Post from "./Post";
+import DataContext from "../context/DataContext";
 
-const Feed = ({ posts }) => {
+const Feed = () => {
+  const { searchResult: posts } = useContext(DataContext);
   return (
     <>
       {posts.length ? (

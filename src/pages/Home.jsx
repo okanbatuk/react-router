@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Feed from "../components/Feed";
 
-const Home = ({ loading, error, posts }) => {
+const Home = ({ loading, error }) => {
   return (
     <main className="Home">
       {error ? (
@@ -27,7 +27,7 @@ const Home = ({ loading, error, posts }) => {
           Loading..
         </p>
       ) : (
-        <Feed posts={posts} />
+        <Feed />
       )}
     </main>
   );

@@ -1,16 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Form from "../components/PostForm";
 
-const NewPost = ({ posts, setPosts, navigate, api }) => {
+const NewPost = () => {
   return (
     <main className="PostPage">
       <h1>New Post</h1>
-      <Form
-        navigate={navigate}
-        api={api}
-        posts={posts}
-        setPosts={setPosts}
-      />
+      <Form />
     </main>
   );
 };
