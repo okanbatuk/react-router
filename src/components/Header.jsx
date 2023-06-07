@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaLaptop, FaTabletAlt, FaMobileAlt } from "react-icons/fa";
+import useWindowSize from "../hooks/useWindowSize";
 
-const Header = ({ title, width }) => {
+const Header = ({ title }) => {
+  const { width } = useWindowSize();
   return (
     <header className="Header">
       <h2>
